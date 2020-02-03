@@ -2,9 +2,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://destinyu.github.io/2014/about/</loc>
-      
-      <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+      <loc>https://example.com/about/</loc>
       
       
       <changefreq>monthly</changefreq>
@@ -16,9 +14,7 @@
     </url>
   
     <url>
-      <loc>https://destinyu.github.io/</loc>
-      
-      <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+      <loc>https://example.com/categories/</loc>
       
       
       
@@ -28,19 +24,7 @@
     </url>
   
     <url>
-      <loc>https://destinyu.github.io/posts/</loc>
-      
-      <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://destinyu.github.io/about/</loc>
+      <loc>https://example.com/contact/</loc>
       
       
       <changefreq>monthly</changefreq>
@@ -52,17 +36,7 @@
     </url>
   
     <url>
-      <loc>https://destinyu.github.io/categories/</loc>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://destinyu.github.io/contact/</loc>
+      <loc>https://example.com/1/creating-a-new-theme/</loc>
       
       
       <changefreq>monthly</changefreq>
@@ -74,7 +48,27 @@
     </url>
   
     <url>
-      <loc>https://destinyu.github.io/tags/</loc>
+      <loc>https://example.com/</loc>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://example.com/posts/</loc>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://example.com/tags/</loc>
       
       
       
