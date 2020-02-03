@@ -2,6 +2,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://example.com/categories/</loc>
+      
+      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://example.com/2020/creating-a-new-theme/</loc>
       
       <lastmod>2020-02-03T00:00:00+00:00</lastmod>
@@ -40,6 +52,68 @@
     </url>
   
     <url>
+      <loc>https://example.com/tags/</loc>
+      
+      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://example.com/categories/info/</loc>
+      
+      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://example.com/tags/information/</loc>
+      
+      <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://example.com/categories/git/</loc>
+      
+      <lastmod>2020-01-04T00:00:00+00:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://example.com/2020/git-diff%E7%9A%84%E5%85%B7%E4%BD%93%E7%94%A8%E6%B3%95%E6%B5%85%E6%9E%90/</loc>
+      
+      <lastmod>2020-01-04T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>weekly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://example.com/about/</loc>
       
       
@@ -52,16 +126,6 @@
     </url>
   
     <url>
-      <loc>https://example.com/categories/</loc>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
       <loc>https://example.com/contact/</loc>
       
       
@@ -69,16 +133,6 @@
       
       
       <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://example.com/tags/</loc>
-      
-      
-      
-      <priority>0</priority>
       
       
     </url>

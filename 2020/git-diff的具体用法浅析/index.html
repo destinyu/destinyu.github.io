@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  
+  <link rel="next" href="https://example.com/2020/creating-a-new-theme/" />
+  <link rel="canonical" href="https://example.com/2020/git-diff%E7%9A%84%E5%85%B7%E4%BD%93%E7%94%A8%E6%B3%95%E6%B5%85%E6%9E%90/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           git diff 的用法浅析 | ForFurture
+       
+  </title>
+  <meta name="title" content="git diff 的用法浅析 | ForFurture">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="git diff 的用法浅析"/>
+<meta name="twitter:description" content="所有用法 Git分为 工作区，暂存区，仓库
+git add#把工作区内容放入暂存区  git commit#把暂存区内容提交到仓库  git diff#查看工作区与暂存区差异  git diff --cashed#查看暂存区与仓库差异  git diff HEAD#查看工作区与仓库差异  以新建文件流程从头开始  在工作区新建一个文件（内容为一行文字）  vim new.txt   查看工作区与暂存区区别==（此时暂存区没有东西）==  git diff new.txt  结果为空（没有区别）
+ 将文件提交到暂存区  git add new.txt  此时暂存区内容与工作区一致，还是没有区别
+ 修改工作区文件内容（添加一行）  vim new.txt   可以查看一下目前的所有区状态  git status  显示为：
+​ 第一个版本的new未commit
+​ 第二个修改版本的new未add&#43;commit
+（==注意此时若commit则提交的是未修改的第一版==）
+各区情况：
+ 工作区为修改后的两行内容 暂存区为第一次存入的一行内容 仓库为空   查看工作区与暂存区的区别  git diff new."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "git diff 的用法浅析",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/example.com\/2020\/git-diff%E7%9A%84%E5%85%B7%E4%BD%93%E7%94%A8%E6%B3%95%E6%B5%85%E6%9E%90\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/example.com\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  
+  "wordcount":  94 ,
+  "url": "https:\/\/example.com\/2020\/git-diff%E7%9A%84%E5%85%B7%E4%BD%93%E7%94%A8%E6%B3%95%E6%B5%85%E6%9E%90\/",
+  "datePublished": "2020-01-04T00:00:00\x2b00:00",
+  "dateModified": "2020-01-04T00:00:00\x2b00:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Destinyu",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/example.com\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Destinyu"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://example.com">ForFurture</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blogs</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tag</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://example.com">ForFurture</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blogs</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tag</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">git diff 的用法浅析</h1>
+        <div class="post-meta">
+              <a href="https://example.com" rel="author">Destinyu</a>  ♥ 
+                <span class="post-time">
+                     <time datetime=2020-01-04 >4 January 2020</time>
+                </span>
+                
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://example.com/categories/git/"> git </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h2 id="所有用法">所有用法</h2>
+
+<p>Git分为 <strong>工作区</strong>，<strong>暂存区</strong>，<strong>仓库</strong></p>
+
+<pre><code class="language-bash">git add#把工作区内容放入暂存区
+</code></pre>
+
+<pre><code class="language-bash">git commit#把暂存区内容提交到仓库
+</code></pre>
+
+<pre><code class="language-bash">git diff#查看工作区与暂存区差异
+</code></pre>
+
+<pre><code class="language-bash">git diff --cashed#查看暂存区与仓库差异
+</code></pre>
+
+<pre><code class="language-bash">git diff HEAD#查看工作区与仓库差异
+</code></pre>
+
+<h2 id="以新建文件流程从头开始">以新建文件流程从头开始</h2>
+
+<ol>
+<li>在工作区新建一个文件（内容为一行文字）</li>
+</ol>
+
+<pre><code class="language-bash">   vim new.txt
+</code></pre>
+
+<ol>
+<li>查看工作区与暂存区区别==（此时暂存区没有东西）==</li>
+</ol>
+
+<pre><code class="language-bash">   git diff new.txt
+</code></pre>
+
+<p>结果为空（没有区别）</p>
+
+<ol>
+<li>将文件提交到暂存区</li>
+</ol>
+
+<pre><code class="language-bash">   git add new.txt
+</code></pre>
+
+<p>此时暂存区内容与工作区一致，还是没有区别</p>
+
+<ol>
+<li>修改工作区文件内容（添加一行）</li>
+</ol>
+
+<pre><code class="language-bash">   vim new.txt
+</code></pre>
+
+<ol>
+<li>可以查看一下目前的所有区状态</li>
+</ol>
+
+<pre><code class="language-bash">   git status
+</code></pre>
+
+<p>显示为：</p>
+
+<p>​    第一个版本的new未commit</p>
+
+<p>​    第二个修改版本的new未add+commit</p>
+
+<p>（==注意此时若commit则提交的是未修改的第一版==）</p>
+
+<p>各区情况：</p>
+
+<ul>
+<li>工作区为修改后的两行内容</li>
+<li>暂存区为第一次存入的一行内容</li>
+<li>仓库为空</li>
+</ul>
+
+<ol>
+<li>查看工作区与暂存区的区别</li>
+</ol>
+
+<pre><code class="language-bash">   git diff new.txt
+</code></pre>
+
+<p>结果为新添加的一行</p>
+
+<ol>
+<li>查看暂存区与仓库的区别</li>
+</ol>
+
+<pre><code class="language-bash">   git diff --cached -- new.txt
+</code></pre>
+
+<p>因为仓库为空，所以结果为第一版的一行</p>
+
+<ol>
+<li>查看工作区与仓库的区别</li>
+</ol>
+
+<pre><code class="language-bash">   git diff HEAD -- new.txt
+</code></pre>
+
+<p>仓库为空，结果为修改后的两行</p>
+
+<p>==到这里应该基本明白了三种diff的区别==</p>
+
+<p>可以用9-练习</p>
+
+<ol>
+<li>提交在暂存区的第一个版本</li>
+</ol>
+
+<pre><code class="language-bash">   git commit -m &quot;first version&quot;
+</code></pre>
+
+<p>此时工作区为修改后未add的第二版</p>
+
+<p>暂存区为空</p>
+
+<p>仓库为第一版</p>
+
+<ol>
+<li><p>继续练习下面的命令，先根据自己的判断猜测结果</p>
+
+<pre><code class="language-bash">git status
+git diff --cached -- new.txt#为空
+git diff HEAD -- new.txt#为后添加的一行
+</code></pre></li>
+
+<li><p>另外的两个反向命令</p>
+
+<pre><code class="language-bash">git checkout#撤销工作区修改，把暂存区最新版本放入工作区
+git reset HEAD#把仓库最新版本放入暂存区
+</code></pre></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>:</span>
+                <span>Destinyu </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>:</span>
+                   <span>94</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>:</span>
+                <span>
+
+      
+      
+      
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fexample.com%2f2020%2fgit-diff%25E7%259A%2584%25E5%2585%25B7%25E4%25BD%2593%25E7%2594%25A8%25E6%25B3%2595%25E6%25B5%2585%25E6%259E%2590%2f&amp;title=git%20diff%20%e7%9a%84%e7%94%a8%e6%b3%95%e6%b5%85%e6%9e%90" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2fexample.com%2f2020%2fgit-diff%25E7%259A%2584%25E5%2585%25B7%25E4%25BD%2593%25E7%2594%25A8%25E6%25B3%2595%25E6%25B5%2585%25E6%259E%2590%2f&amp;title=git%20diff%20%e7%9a%84%e7%94%a8%e6%b3%95%e6%b5%85%e6%9e%90" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+        <a href="//service.weibo.com/share/share.php?url=https%3a%2f%2fexample.com%2f2020%2fgit-diff%25E7%259A%2584%25E5%2585%25B7%25E4%25BD%2593%25E7%2594%25A8%25E6%25B3%2595%25E6%25B5%2585%25E6%259E%2590%2f&amp;appkey=&amp;title=git%20diff%20%e7%9a%84%e7%94%a8%e6%b3%95%e6%b5%85%e6%9e%90" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();"></a></span> · 
+                <span><a href="https://example.com"></a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+         
+        
+        <a href="https://example.com/2020/creating-a-new-theme/" class="next" rel="next" title="Creating a New Theme">Creating a New Theme&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'yourdiscussshortname';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script src="https://utteranc.es/client.js"
+            repo="destinyu/destinyu/destinyu.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://example.com">Destinyu</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>
