@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on ForFurture</title>
-    <link>https://example.com/categories/git/</link>
+    <link>https://destinyu.github.io/categories/git/</link>
     <description>Recent content in git on ForFurture</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 04 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/categories/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://destinyu.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>git diff 的用法浅析</title>
-      <link>https://example.com/2020/git-diff%E7%9A%84%E5%85%B7%E4%BD%93%E7%94%A8%E6%B3%95%E6%B5%85%E6%9E%90/</link>
+      <link>https://destinyu.github.io/2020/git-diff%E7%9A%84%E5%85%B7%E4%BD%93%E7%94%A8%E6%B3%95%E6%B5%85%E6%9E%90/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2020/git-diff%E7%9A%84%E5%85%B7%E4%BD%93%E7%94%A8%E6%B3%95%E6%B5%85%E6%9E%90/</guid>
+      <guid>https://destinyu.github.io/2020/git-diff%E7%9A%84%E5%85%B7%E4%BD%93%E7%94%A8%E6%B3%95%E6%B5%85%E6%9E%90/</guid>
       <description>所有用法 Git分为 工作区，暂存区，仓库
 git add#把工作区内容放入暂存区  git commit#把暂存区内容提交到仓库  git diff#查看工作区与暂存区差异  git diff --cashed#查看暂存区与仓库差异  git diff HEAD#查看工作区与仓库差异  以新建文件流程从头开始  在工作区新建一个文件（内容为一行文字）  vim new.txt   查看工作区与暂存区区别==（此时暂存区没有东西）==  git diff new.txt  结果为空（没有区别）
  将文件提交到暂存区  git add new.txt  此时暂存区内容与工作区一致，还是没有区别

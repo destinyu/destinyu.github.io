@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ForFurture</title>
-    <link>https://example.com/categories/</link>
+    <link>https://destinyu.github.io/categories/</link>
     <description>Recent content in Categories on ForFurture</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 03 Feb 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://destinyu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>info</title>
-      <link>https://example.com/categories/info/</link>
+      <link>https://destinyu.github.io/categories/info/</link>
       <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/categories/info/</guid>
+      <guid>https://destinyu.github.io/categories/info/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>https://example.com/categories/git/</link>
+      <link>https://destinyu.github.io/categories/git/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/categories/git/</guid>
+      <guid>https://destinyu.github.io/categories/git/</guid>
       <description></description>
     </item>
     
