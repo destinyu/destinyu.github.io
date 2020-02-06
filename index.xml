@@ -5,8 +5,489 @@
     <description>Recent content in ForFurture on ForFurture</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 03 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Feb 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://destinyu.github.io/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>python基础知识总结(一)</title>
+      <link>https://destinyu.github.io/2020/python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E4%B8%80/</link>
+      <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://destinyu.github.io/2020/python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E4%B8%80/</guid>
+      <description>
+
+&lt;h2 id=&#34;变量与简单数据类型&#34;&gt;变量与简单数据类型&lt;/h2&gt;
+
+&lt;h3 id=&#34;变量名规范&#34;&gt;变量名规范&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;应使用小写字母&lt;/li&gt;
+&lt;li&gt;字母之间可以用下划线连接&lt;/li&gt;
+&lt;li&gt;便于阅读但不能过于省略&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;字符串操作&#34;&gt;字符串操作&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;单引号和双引号均可，根据实际包含情况来决定&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;转换大小写的用法&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  string.title()#首字母大写
+   string.upper()#全部大写
+   string.lower()#全部小写
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;合并字符串：+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;添加空白与换行：\t+\n&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;删除多余空白&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  string.rstrip()#删除末尾空白
+   string.lstrip()#删除开头空白
+   string.strip()#删除字符串两端空白
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;数字&#34;&gt;数字&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;乘方：a**b&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;类型转换：&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  str(number)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;特别注意：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;python2：&lt;/p&gt;
+
+&lt;p&gt;&lt;sup&gt;3&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt;=1&lt;/p&gt;
+
+&lt;p&gt;3.0/2=1.5&lt;/p&gt;
+
+&lt;p&gt;&lt;sup&gt;3&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt;.0=1.5&lt;/p&gt;
+
+&lt;p&gt;3.0/2.0=1.5&lt;/p&gt;
+
+&lt;p&gt;python3：&lt;/p&gt;
+
+&lt;p&gt;&lt;sup&gt;3&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt;=1.5&lt;/p&gt;
+
+&lt;h3 id=&#34;python之禅&#34;&gt;python之禅&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Complex is better than complicated&lt;/li&gt;
+&lt;li&gt;Simple is better than complex&lt;/li&gt;
+&lt;li&gt;Now is better than never&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;amp;nbsp&lt;/p&gt;
+
+&lt;h2 id=&#34;列表的应用&#34;&gt;列表的应用&lt;/h2&gt;
+
+&lt;h3 id=&#34;列表及其索引&#34;&gt;列表及其索引&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;索引从0开始&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  list=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]
+   print(list[0])#从零开始
+   print(list[3])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;列表的修改操作&#34;&gt;列表的修改操作&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;修改：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  list[0]=&#39;e&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;添加：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  list.append(&#39;f&#39;)
+   list.append(0,&#39;f&#39;)#位置插入
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;删除：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  del list[0]#无法再次访问
+  
+  list.pop()#可再次访问，删最后一块
+  list.pop(0)#弹出任何位置的元素
+  poped_list#删除的存储到这里
+  
+  list.remove(&#39;a&#39;)#删除指定值元素
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;组织列表&#34;&gt;组织列表&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;直接排序&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  list.sort()#由小到大
+  list.sort(reverse=True)#反向
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用排序结果但不改变原序列&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  sorted(list)
+   sorted(list,reverse=True)#反转
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;反转列表元素&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  list.reverse()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表长度&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  len(list)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;操作列表&#34;&gt;操作列表&lt;/h2&gt;
+
+&lt;h3 id=&#34;列表遍历&#34;&gt;列表遍历&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;for循环(注意缩进)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  for list in lists:
+    print(list)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;数值列表&#34;&gt;数值列表&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;range&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  for value in range(1,5):#不会打印5
+    print(value)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;数字列表&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  numbers=list(range(1,6))
+  even_numbers=list(range(2,11,2))#每次加2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;对数字列表进行统计&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  min(list)#最大值
+  max(list)#最小值
+  sum(list)#总和
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;用for循环生成数字列表&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  squares=[]
+  for value in range(1,11):
+    square=value**2
+    squares.append(square)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用列表解析直接生成&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  squares=[value**2 for value in range(1,11)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;使用列表的一部分&#34;&gt;使用列表的一部分&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;切片&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  list[1:4]#提取2-4的元素
+  list[:4]#从表头开始
+  list[-3:]#从表尾倒数三个
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;复制列表&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  new_list=list[:]#复制列表的副本
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;元组&#34;&gt;元组&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;定义一个元组&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  dimensions=(200,50)#不能改值
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;重新赋值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  dimensions=(300,50)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;if语句&#34;&gt;if语句&lt;/h2&gt;
+
+&lt;h3 id=&#34;一条if语句&#34;&gt;一条if语句&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;区分大小写&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;注意缩进&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可以使用and和or判断两个条件&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;检查特定值是否包含在列表：&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  if value in list
+  if value not in list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;if组合句&#34;&gt;if组合句&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;if-else&lt;/li&gt;
+&lt;li&gt;if-elif-else&lt;/li&gt;
+&lt;li&gt;if-elif&amp;hellip;-else&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;字典&#34;&gt;字典&lt;/h2&gt;
+
+&lt;h3 id=&#34;字典及其使用&#34;&gt;字典及其使用&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;创建&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  dictionary={&#39;a&#39;:&#39;b&#39;,&#39;c&#39;:&#39;d&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;访问&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  dictionary[&#39;a&#39;]
+  dictionary[&#39;c&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;添加键值对&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  dictionary[&#39;e&#39;]=&#39;f&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;删除&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  del dictionary[&#39;a&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;遍历字典&#34;&gt;遍历字典&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;遍历所有键值对&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  for key,value in dictionary.items():
+    print(key)
+    print(value)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;遍历所有键&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  for key in dictionary.keys()
+  for key in dictionary#可省略
+  for key in sorted(dictionary.keys())#排序后的结果
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;遍历所有值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  for value in dictionary.values()
+  for value in set(dictionary.values())#去掉重复值
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;嵌套&#34;&gt;嵌套&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;字典列表&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  d1={&#39;a&#39;:1}
+  d2={&#39;b&#39;:2}
+  d3={&#39;c&#39;:3}
+  list=[d1,d2,d3]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在字典中存列表&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  dictionary={
+    &#39;a&#39;:1,
+    &#39;b&#39;:[1,2]
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在字典中套字典&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  dictionary={
+    &#39;a&#39;={
+        &#39;first&#39;:1,
+        &#39;last&#39;:2,
+    },
+    &#39;b&#39;={
+        &#39;first&#39;:3,
+        &#39;last&#39;:4,
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;用户输入和while循环&#34;&gt;用户输入和while循环&lt;/h2&gt;
+
+&lt;h3 id=&#34;input&#34;&gt;input&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用int来获取数值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  number=input(&amp;quot;Please input your number: &amp;quot;)
+  num=int(number)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;while&#34;&gt;while&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;简单的while循环&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  current_number=1
+  while current_number&amp;lt;=5:
+    print(current_number)
+    current_number+=1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用判断来退出&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  message=&amp;quot;&amp;quot;
+  while message!=&#39;quit&#39;:
+    message=input(&amp;quot;please input any message&amp;quot;)
+    if message!=&#39;quit&#39;:
+        print message
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用标志&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  active = True
+  while active:
+    message = input(&amp;quot;...&amp;quot;)
+    if message == &#39;quit&#39;:
+        active=False
+      else:
+        print(message)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;break和continue&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  while True:
+    message = input(&amp;quot;...&amp;quot;)
+    if message == &#39;quit&#39;
+        break#直接跳出循环，结束
+      else:
+        print message
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  while True:
+    message = input(&amp;quot;...&amp;quot;)
+    if message == &#39;quit&#39;
+        continue#不理会。返回循环开头继续
+      else:
+        print message
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;用while来处理字典和列表&#34;&gt;用while来处理字典和列表&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;列表之间元素移动&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  unconfirmed=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]
+  confirmed=[]
+  while unconfirmed:
+    current=unconfirmed.pop()
+    confirmed.append(current)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;删除列表中特定元素&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  list=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]
+  while &#39;b&#39; in list:
+    list.remove(&#39;b&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Creating a New Theme</title>
