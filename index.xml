@@ -5,8 +5,569 @@
     <description>Recent content in ForFurture on ForFurture</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 04 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Feb 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://destinyu.github.io/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>python基础知识总结（二）</title>
+      <link>https://destinyu.github.io/2020/python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E4%BA%8C/</link>
+      <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://destinyu.github.io/2020/python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E4%BA%8C/</guid>
+      <description>
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;函数&#34;&gt;函数&lt;/h2&gt;
+
+&lt;h3 id=&#34;定义函数&#34;&gt;定义函数&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;无参数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def function():
+    print(&amp;quot;this is a function&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;传一个参数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def function(name):
+    print(&amp;quot;hello,&amp;quot;+name)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;传递多参数&#34;&gt;传递多参数&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;位置参数（由位置关系关联）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def position_function(a,b):
+    print(a+&amp;quot; need &amp;quot;+b)
+  
+  position_function(&#39;Tom&#39;,&#39;Jerry&#39;)#根据参数的位置决定输出
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;关键字实参&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def key_function(a,b):
+    print(a+&amp;quot; need &amp;quot;+b)
+  
+  key_function(a=&#39;Tom&#39;,b=&#39;Jerry&#39;)#直接由等式决定，可不管顺序
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;默认值（&lt;strong&gt;使用默认值时必须先列出没有默认值的形参&lt;/strong&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def default_function(a,b=&#39;Jerry&#39;):
+    print(a+&amp;quot; need &amp;quot;+b)
+  
+  default_function(&#39;Tom&#39;)
+  default_function(a=&#39;Tom&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;返回值&#34;&gt;返回值&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;返回简单值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def function(a,b):
+    meaasge=a+&#39; &#39;+b)
+    return message
+  
+  function_back=function(&#39;Tom&#39;,&#39;Jerry&#39;)
+  print(function)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;实参可选&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def function(a,b,c=&#39;&#39;):
+    if c:
+        print(a+&amp;quot; need &amp;quot;+b+&amp;quot; and &amp;quot;+c)
+    else:
+        print(a+&amp;quot; need &amp;quot;+b)
+          
+  function_back=function(&#39;Tom&#39;,&#39;Jerry&#39;)
+  function_back=function(&#39;Tom&#39;,&#39;Jerry&#39;,&#39;Mike&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;返回字典&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def function(a,b):
+    name={&#39;first&#39;:a,&#39;last&#39;:b}
+    return name
+  
+  function_back=function(&#39;Tom&#39;,&#39;Jerry&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;传递列表&#34;&gt;传递列表&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;把参数看做列表&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def function(values):
+    for value in values:
+        print(value)
+          
+  names=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]
+  function(names)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;不修改原列表，创建副本&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def function(values[:])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;传递任意数量的参数&#34;&gt;传递任意数量的参数&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;任意数量实参&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def function(*names):
+    print(names)
+  
+  function(&#39;a&#39;)
+  function(&#39;a&#39;,&#39;b&#39;,&#39;c&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;结合位置实参和任意数量参数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def function(age,*names):
+    print(str(age)+&amp;quot; years old:&amp;quot;)
+    for name in names:
+        print(name)
+        
+  function(12,&#39;a&#39;)
+  function(13,&#39;a&#39;,&#39;b&#39;,&#39;c&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用任意数量的关键字实参&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def function(first,last,**info):
+    dictionary={}
+    dictionary[&#39;first_name&#39;]=first
+    dictionary[&#39;last_name&#39;]=last
+    for key,value in info.items():
+        dictionary[key]=value
+    return dictionary
+    
+  user=function(&#39;a&#39;,&#39;b&#39;,age=12,address=&#39;China&#39;)
+  print(user)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;函数存入模块&#34;&gt;函数存入模块&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;导入整个函数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  import function
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;导入某模块的特定函数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  from module_name import function
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;给函数指定别名&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  from module_name import function as fn
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;给模块指定别名&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  import module_name as mn
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;导入模块中的所有函数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  from module_name import *
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;类&#34;&gt;类&lt;/h2&gt;
+
+&lt;h3 id=&#34;创建和使用类&#34;&gt;创建和使用类&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;一个简单的类&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  class Dog():
+    def _init_(self,name,age):
+        self.name=name
+        self.age=age
+      
+      def sit(self):
+        print(self.name+&amp;quot; is now sitting&amp;quot;)
+      #在python2中，要写为Dog(object)
+  
+  my_dog=Dog(&#39;tom&#39;,3)#实例
+  my_dog.sit()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;使用类和实例&#34;&gt;使用类和实例&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;给属性指定默认值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  class Car():
+    def _init_(self,make,model,year):
+        self.make=make
+        self.model=model
+        self.year=year
+        self.odometer_reading=0
+    
+    def get_descriptive_name(self):
+        long_name=str(self.year)+&amp;quot; &amp;quot;+self.make+&amp;quot; &amp;quot;+self.model
+        return long_name
+        
+    def read_odometer(self):
+        print(&amp;quot;This car has &amp;quot;+str(self.odometer_reading)+&amp;quot;                  miles on it&amp;quot;)
+  
+  my_new_car=Car(&#39;audi&#39;,&#39;A4&#39;,2016)
+  print(my_new_car.get_descriptive_name())
+  my_new_year.read_odometer()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;直接修改属性的值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  #接上
+  my_new_car.odometer_reading=23
+  my_new_car.read_odometer()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;通过方法修改属性值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  class Car():
+    def update_odometer(self,mileage):
+        self.odometer_reading=mileage
+  
+  #禁止里程数回调的版本
+  class Car():
+      def update_odometer(self,mileage):
+          if mileage&amp;gt;=self.odometer_reading:
+              self.odometering_reading=mileage
+          else:
+              print(&amp;quot;you can not roll back&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;继承&#34;&gt;继承&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;子类通式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  class ElectricCar(Car):
+    def _init_(self,make,model,year):
+        super()._init_(make,model,year)
+  
+  #python2.7
+  class ElectricCar(Car):
+    def _init_(self,make,model,year):
+        super(EletricCar,self)._init_(make,model,year)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;给子类定义属性和方法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  class ElectricCar(Car):
+    def _init_(self,make,model,year):
+        super()._init_(make,model,year)
+        self.battery=Battery()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;导入类&#34;&gt;导入类&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;导入单个类&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  from car import Car
+  from car import ElectricCar
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;导入多个类&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  from car import car,ElectricCar
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;导入整个模块&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  import car
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;导入模块所有类&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  from car import *
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;文件和异常&#34;&gt;文件和异常&lt;/h2&gt;
+
+&lt;h3 id=&#34;从文件中读取数据&#34;&gt;从文件中读取数据&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;读取整个文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  with open(&#39;a.txt&#39;) as file_object:#文件放在同一文件夹
+    contents=file_object.read()
+    print(contents)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;逐行读取&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  with open(&#39;a.txt&#39;) as file_object:
+    for line in file_object:
+        print(line.rstrip())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;创建包含文件各行内容的列表&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  with open(&#39;a.txt&#39;) as file_object:
+    lines=file_object.readlines()
+    
+  for line in lines:
+    print(line.rstrip())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;写入文件&#34;&gt;写入文件&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;写入空文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  with open(&#39;b.txt&#39;,&#39;w&#39;) as file_object:
+    file_object.write(&amp;quot;I love programming&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;写入多行&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  with open(&#39;b.txt&#39;,&#39;w&#39;) as file_object:
+    file_object.write(&amp;quot;I love programming\n&amp;quot;)
+    file_object.write(&amp;quot;I love DL\n&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;附加到文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  with open(&#39;c.txt&#39;,&#39;a&#39;) as file_object:
+    file_object.write(&amp;quot;I love programming&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;异常&#34;&gt;异常&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;try-except&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  try:
+    print(5/0)
+  except ZeroDivisionError:
+    print(&amp;quot;You can&#39;t divide by zero&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;try-except-else&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当不一定出现异常时使用&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;分析文本&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  try:
+    with open(&#39;f.txt&#39;) as f_obj:
+        contents=f_obj.read()
+  except FileNotFoundError:
+    msg=&amp;quot;Sorry,the file &amp;quot;+filename+&amp;quot; does not exist.&amp;quot;
+    print(msg)
+  else:
+    words=contents.split()
+    num_words=len(words)
+    print(&amp;quot;The file has about&amp;quot;+str(num_words)+&amp;quot; words&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;可用pass在出现错误时不报错&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;存储数据&#34;&gt;存储数据&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;json.dump()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  import json
+  numbers=[2,3,5,7,11,13]
+  
+  filename=&#39;numbers.json&#39;
+  with open(filename,&#39;w&#39;) as f_obj:
+    json.dump(numbers,f_obj)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;json.load()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  import json
+  filename=&#39;numbers.json&#39;
+  with open(filename) as f_obj:
+    numbers=json.load(f_obj)
+  print(numbers)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;保存和读取用户生成数据&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  import json
+  filename=&#39;username.json&#39;
+  try:
+    with open(filename) as f_obj:
+        username=json.load(f_obj)
+  except FileNotFoundError:
+    username=input(&amp;quot;What is your name?&amp;quot;)
+    with open(filename,&#39;w&#39;) as f_obj:
+        json.dump(username,f_obj)
+        print(&amp;quot;we will remeber you when you back,&amp;quot;+username)
+  else:
+    print(&amp;quot;welcome back,&amp;quot;+username+&amp;quot;!&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;重构（&lt;strong&gt;将代码重新划分为一系列具体工作的函数&lt;/strong&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  import json
+  def get_stored_username():
+    filename=&#39;username.json&#39;
+    try:
+        with open(filename) as f_obj:
+            username=json.load(f_obj)
+    except FileNotFoundError:
+        return None
+      else:
+        return username
+  
+  def get_new_username():
+    username=input(&amp;quot;What is your name?&amp;quot;)
+    filename=&#39;username.json&#39;
+    with open(filename,&#39;w&#39;) as f_obj:
+        json.dump(username,f_obj)
+    return username
+  
+  def greet_user():
+    username=get_stored_username()
+    if username:
+        print(&amp;quot;Wellcome back,&amp;quot;+username)
+    else:
+        username=get_new_username()
+        print(&amp;quot;we&#39;ll remeber when you come back, &amp;quot;+username)
+  
+  greet_user()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;测试代码&#34;&gt;测试代码&lt;/h2&gt;
+
+&lt;h3 id=&#34;测试函数&#34;&gt;测试函数&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;单元测试&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  import unittest
+  from module import function
+  
+  class NamesTestCase(unittest.TestCase):
+    def test_first_last_name(self):#必须以test开头
+    ...
+    self.assertEqual(function,&#39;测试样例&#39;)
+  
+  unittest.main()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;测试类&#34;&gt;测试类&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;断言方法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  assertEqual(a,b)
+  assertNotEqual(a,b)
+  assertTrue(x)
+  assertFalse(x)
+  assertIn(item,list)
+  assertNotIn(item,list)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;setUp()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  def setUp(self):
+    self.name=...
+  #可以直接创建实例，不需要在测试方法里创建
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>python基础知识总结(一)</title>

@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://destinyu.github.io/2020/python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E4%B8%80/" />
+  
+  <link rel="canonical" href="https://destinyu.github.io/2020/python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E4%BA%8C/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           python基础知识总结（二） | ForFurture
+       
+  </title>
+  <meta name="title" content="python基础知识总结（二） | ForFurture">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python基础知识总结（二）"/>
+<meta name="twitter:description" content="函数 定义函数  无参数  def function(): print(&quot;this is a function&quot;)   传一个参数  def function(name): print(&quot;hello,&quot;&#43;name)  传递多参数  位置参数（由位置关系关联）  def position_function(a,b): print(a&#43;&quot; need &quot;&#43;b) position_function(&#39;Tom&#39;,&#39;Jerry&#39;)#根据参数的位置决定输出   关键字实参  def key_function(a,b): print(a&#43;&quot; need &quot;&#43;b) key_function(a=&#39;Tom&#39;,b=&#39;Jerry&#39;)#直接由等式决定，可不管顺序   默认值（使用默认值时必须先列出没有默认值的形参）  def default_function(a,b=&#39;Jerry&#39;): print(a&#43;&quot; need &quot;&#43;b) default_function(&#39;Tom&#39;) default_function(a=&#39;Tom&#39;)  返回值  返回简单值  def function(a,b): meaasge=a&#43;&#39; &#39;&#43;b) return message function_back=function(&#39;Tom&#39;,&#39;Jerry&#39;) print(function)   实参可选  def function(a,b,c=&#39;&#39;): if c: print(a&#43;&quot; need &quot;&#43;b&#43;&quot; and &quot;&#43;c) else: print(a&#43;&quot; need &quot;&#43;b) function_back=function(&#39;Tom&#39;,&#39;Jerry&#39;) function_back=function(&#39;Tom&#39;,&#39;Jerry&#39;,&#39;Mike&#39;)   返回字典  def function(a,b): name={&#39;first&#39;:a,&#39;last&#39;:b} return name function_back=function(&#39;Tom&#39;,&#39;Jerry&#39;)  传递列表  把参数看做列表  def function(values): for value in values: print(value) names=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;] function(names)   不修改原列表，创建副本  def function(values[:])  传递任意数量的参数  任意数量实参  def function(*names): print(names) function(&#39;a&#39;) function(&#39;a&#39;,&#39;b&#39;,&#39;c&#39;)   结合位置实参和任意数量参数  def function(age,*names): print(str(age)&#43;&quot; years old:&quot;) for name in names: print(name) function(12,&#39;a&#39;) function(13,&#39;a&#39;,&#39;b&#39;,&#39;c&#39;)   使用任意数量的关键字实参  def function(first,last,**info): dictionary={} dictionary[&#39;first_name&#39;]=first dictionary[&#39;last_name&#39;]=last for key,value in info."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "python基础知识总结（二）",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/destinyu.github.io\/2020\/python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E4%BA%8C\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/destinyu.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  "keywords": "基础, 总结",
+  "wordcount":  485 ,
+  "url": "https:\/\/destinyu.github.io\/2020\/python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E4%BA%8C\/",
+  "datePublished": "2020-02-06T00:00:00\x2b00:00",
+  "dateModified": "2020-02-06T00:00:00\x2b00:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Destinyu",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/destinyu.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Destinyu"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://destinyu.github.io">ForFurture</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blogs</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tag</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://destinyu.github.io">ForFurture</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blogs</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tag</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">python基础知识总结（二）</h1>
+        <div class="post-meta">
+              <a href="https://destinyu.github.io" rel="author">Destinyu</a>  ♥ 
+                <span class="post-time">
+                     <time datetime=2020-02-06 >6 February 2020</time>
+                </span>
+                
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://destinyu.github.io/categories/python/"> python </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                3 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<p><br/></p>
+
+<h2 id="函数">函数</h2>
+
+<h3 id="定义函数">定义函数</h3>
+
+<ul>
+<li>无参数</li>
+</ul>
+
+<pre><code class="language-python">  def function():
+    print(&quot;this is a function&quot;)
+</code></pre>
+
+<ul>
+<li>传一个参数</li>
+</ul>
+
+<pre><code class="language-python">  def function(name):
+    print(&quot;hello,&quot;+name)
+</code></pre>
+
+<h3 id="传递多参数">传递多参数</h3>
+
+<ul>
+<li>位置参数（由位置关系关联）</li>
+</ul>
+
+<pre><code class="language-python">  def position_function(a,b):
+    print(a+&quot; need &quot;+b)
+  
+  position_function('Tom','Jerry')#根据参数的位置决定输出
+</code></pre>
+
+<ul>
+<li>关键字实参</li>
+</ul>
+
+<pre><code class="language-python">  def key_function(a,b):
+    print(a+&quot; need &quot;+b)
+  
+  key_function(a='Tom',b='Jerry')#直接由等式决定，可不管顺序
+</code></pre>
+
+<ul>
+<li>默认值（<strong>使用默认值时必须先列出没有默认值的形参</strong>）</li>
+</ul>
+
+<pre><code class="language-python">  def default_function(a,b='Jerry'):
+    print(a+&quot; need &quot;+b)
+  
+  default_function('Tom')
+  default_function(a='Tom')
+</code></pre>
+
+<h3 id="返回值">返回值</h3>
+
+<ul>
+<li>返回简单值</li>
+</ul>
+
+<pre><code class="language-python">  def function(a,b):
+    meaasge=a+' '+b)
+    return message
+  
+  function_back=function('Tom','Jerry')
+  print(function)
+</code></pre>
+
+<ul>
+<li>实参可选</li>
+</ul>
+
+<pre><code class="language-python">  def function(a,b,c=''):
+    if c:
+        print(a+&quot; need &quot;+b+&quot; and &quot;+c)
+    else:
+        print(a+&quot; need &quot;+b)
+          
+  function_back=function('Tom','Jerry')
+  function_back=function('Tom','Jerry','Mike')
+</code></pre>
+
+<ul>
+<li>返回字典</li>
+</ul>
+
+<pre><code class="language-python">  def function(a,b):
+    name={'first':a,'last':b}
+    return name
+  
+  function_back=function('Tom','Jerry')
+</code></pre>
+
+<h3 id="传递列表">传递列表</h3>
+
+<ul>
+<li>把参数看做列表</li>
+</ul>
+
+<pre><code class="language-python">  def function(values):
+    for value in values:
+        print(value)
+          
+  names=['a','b','c']
+  function(names)
+</code></pre>
+
+<ul>
+<li>不修改原列表，创建副本</li>
+</ul>
+
+<pre><code class="language-python">  def function(values[:])
+</code></pre>
+
+<h3 id="传递任意数量的参数">传递任意数量的参数</h3>
+
+<ul>
+<li>任意数量实参</li>
+</ul>
+
+<pre><code class="language-python">  def function(*names):
+    print(names)
+  
+  function('a')
+  function('a','b','c')
+</code></pre>
+
+<ul>
+<li>结合位置实参和任意数量参数</li>
+</ul>
+
+<pre><code class="language-python">  def function(age,*names):
+    print(str(age)+&quot; years old:&quot;)
+    for name in names:
+        print(name)
+        
+  function(12,'a')
+  function(13,'a','b','c')
+</code></pre>
+
+<ul>
+<li>使用任意数量的关键字实参</li>
+</ul>
+
+<pre><code class="language-python">  def function(first,last,**info):
+    dictionary={}
+    dictionary['first_name']=first
+    dictionary['last_name']=last
+    for key,value in info.items():
+        dictionary[key]=value
+    return dictionary
+    
+  user=function('a','b',age=12,address='China')
+  print(user)
+</code></pre>
+
+<h3 id="函数存入模块">函数存入模块</h3>
+
+<ul>
+<li>导入整个函数</li>
+</ul>
+
+<pre><code class="language-python">  import function
+</code></pre>
+
+<ul>
+<li>导入某模块的特定函数</li>
+</ul>
+
+<pre><code class="language-python">  from module_name import function
+</code></pre>
+
+<ul>
+<li>给函数指定别名</li>
+</ul>
+
+<pre><code class="language-python">  from module_name import function as fn
+</code></pre>
+
+<ul>
+<li>给模块指定别名</li>
+</ul>
+
+<pre><code class="language-python">  import module_name as mn
+</code></pre>
+
+<ul>
+<li>导入模块中的所有函数</li>
+</ul>
+
+<pre><code class="language-python">  from module_name import *
+</code></pre>
+
+<p><br/></p>
+
+<p><br/></p>
+
+<h2 id="类">类</h2>
+
+<h3 id="创建和使用类">创建和使用类</h3>
+
+<ul>
+<li>一个简单的类</li>
+</ul>
+
+<pre><code class="language-python">  class Dog():
+    def _init_(self,name,age):
+        self.name=name
+        self.age=age
+      
+      def sit(self):
+        print(self.name+&quot; is now sitting&quot;)
+      #在python2中，要写为Dog(object)
+  
+  my_dog=Dog('tom',3)#实例
+  my_dog.sit()
+</code></pre>
+
+<h3 id="使用类和实例">使用类和实例</h3>
+
+<ul>
+<li>给属性指定默认值</li>
+</ul>
+
+<pre><code class="language-python">  class Car():
+    def _init_(self,make,model,year):
+        self.make=make
+        self.model=model
+        self.year=year
+        self.odometer_reading=0
+    
+    def get_descriptive_name(self):
+        long_name=str(self.year)+&quot; &quot;+self.make+&quot; &quot;+self.model
+        return long_name
+        
+    def read_odometer(self):
+        print(&quot;This car has &quot;+str(self.odometer_reading)+&quot;                  miles on it&quot;)
+  
+  my_new_car=Car('audi','A4',2016)
+  print(my_new_car.get_descriptive_name())
+  my_new_year.read_odometer()
+</code></pre>
+
+<ul>
+<li>直接修改属性的值</li>
+</ul>
+
+<pre><code class="language-python">  #接上
+  my_new_car.odometer_reading=23
+  my_new_car.read_odometer()
+</code></pre>
+
+<ul>
+<li>通过方法修改属性值</li>
+</ul>
+
+<pre><code class="language-python">  class Car():
+    def update_odometer(self,mileage):
+        self.odometer_reading=mileage
+  
+  #禁止里程数回调的版本
+  class Car():
+      def update_odometer(self,mileage):
+          if mileage&gt;=self.odometer_reading:
+              self.odometering_reading=mileage
+          else:
+              print(&quot;you can not roll back&quot;)
+</code></pre>
+
+<h3 id="继承">继承</h3>
+
+<ul>
+<li>子类通式</li>
+</ul>
+
+<pre><code class="language-python">  class ElectricCar(Car):
+    def _init_(self,make,model,year):
+        super()._init_(make,model,year)
+  
+  #python2.7
+  class ElectricCar(Car):
+    def _init_(self,make,model,year):
+        super(EletricCar,self)._init_(make,model,year)
+</code></pre>
+
+<ul>
+<li>给子类定义属性和方法</li>
+</ul>
+
+<pre><code class="language-python">  class ElectricCar(Car):
+    def _init_(self,make,model,year):
+        super()._init_(make,model,year)
+        self.battery=Battery()
+</code></pre>
+
+<h3 id="导入类">导入类</h3>
+
+<ul>
+<li>导入单个类</li>
+</ul>
+
+<pre><code class="language-python">  from car import Car
+  from car import ElectricCar
+</code></pre>
+
+<ul>
+<li>导入多个类</li>
+</ul>
+
+<pre><code class="language-python">  from car import car,ElectricCar
+</code></pre>
+
+<ul>
+<li>导入整个模块</li>
+</ul>
+
+<pre><code class="language-python">  import car
+</code></pre>
+
+<ul>
+<li>导入模块所有类</li>
+</ul>
+
+<pre><code class="language-python">  from car import *
+</code></pre>
+
+<p><br/></p>
+
+<p><br/></p>
+
+<h2 id="文件和异常">文件和异常</h2>
+
+<h3 id="从文件中读取数据">从文件中读取数据</h3>
+
+<ul>
+<li>读取整个文件</li>
+</ul>
+
+<pre><code class="language-python">  with open('a.txt') as file_object:#文件放在同一文件夹
+    contents=file_object.read()
+    print(contents)
+</code></pre>
+
+<ul>
+<li>逐行读取</li>
+</ul>
+
+<pre><code class="language-python">  with open('a.txt') as file_object:
+    for line in file_object:
+        print(line.rstrip())
+</code></pre>
+
+<ul>
+<li>创建包含文件各行内容的列表</li>
+</ul>
+
+<pre><code class="language-python">  with open('a.txt') as file_object:
+    lines=file_object.readlines()
+    
+  for line in lines:
+    print(line.rstrip())
+</code></pre>
+
+<h3 id="写入文件">写入文件</h3>
+
+<ul>
+<li>写入空文件</li>
+</ul>
+
+<pre><code class="language-python">  with open('b.txt','w') as file_object:
+    file_object.write(&quot;I love programming&quot;)
+</code></pre>
+
+<ul>
+<li>写入多行</li>
+</ul>
+
+<pre><code class="language-python">  with open('b.txt','w') as file_object:
+    file_object.write(&quot;I love programming\n&quot;)
+    file_object.write(&quot;I love DL\n&quot;)
+</code></pre>
+
+<ul>
+<li>附加到文件</li>
+</ul>
+
+<pre><code class="language-python">  with open('c.txt','a') as file_object:
+    file_object.write(&quot;I love programming&quot;)
+</code></pre>
+
+<h3 id="异常">异常</h3>
+
+<ul>
+<li>try-except</li>
+</ul>
+
+<pre><code class="language-python">  try:
+    print(5/0)
+  except ZeroDivisionError:
+    print(&quot;You can't divide by zero&quot;)
+</code></pre>
+
+<ul>
+<li>try-except-else</li>
+</ul>
+
+<p>当不一定出现异常时使用</p>
+
+<ul>
+<li>分析文本</li>
+</ul>
+
+<pre><code class="language-python">  try:
+    with open('f.txt') as f_obj:
+        contents=f_obj.read()
+  except FileNotFoundError:
+    msg=&quot;Sorry,the file &quot;+filename+&quot; does not exist.&quot;
+    print(msg)
+  else:
+    words=contents.split()
+    num_words=len(words)
+    print(&quot;The file has about&quot;+str(num_words)+&quot; words&quot;)
+</code></pre>
+
+<ul>
+<li>可用pass在出现错误时不报错</li>
+</ul>
+
+<h3 id="存储数据">存储数据</h3>
+
+<ul>
+<li>json.dump()</li>
+</ul>
+
+<pre><code class="language-python">  import json
+  numbers=[2,3,5,7,11,13]
+  
+  filename='numbers.json'
+  with open(filename,'w') as f_obj:
+    json.dump(numbers,f_obj)
+</code></pre>
+
+<ul>
+<li>json.load()</li>
+</ul>
+
+<pre><code class="language-python">  import json
+  filename='numbers.json'
+  with open(filename) as f_obj:
+    numbers=json.load(f_obj)
+  print(numbers)
+</code></pre>
+
+<ul>
+<li>保存和读取用户生成数据</li>
+</ul>
+
+<pre><code class="language-python">  import json
+  filename='username.json'
+  try:
+    with open(filename) as f_obj:
+        username=json.load(f_obj)
+  except FileNotFoundError:
+    username=input(&quot;What is your name?&quot;)
+    with open(filename,'w') as f_obj:
+        json.dump(username,f_obj)
+        print(&quot;we will remeber you when you back,&quot;+username)
+  else:
+    print(&quot;welcome back,&quot;+username+&quot;!&quot;)
+</code></pre>
+
+<ul>
+<li>重构（<strong>将代码重新划分为一系列具体工作的函数</strong>）</li>
+</ul>
+
+<pre><code class="language-python">  import json
+  def get_stored_username():
+    filename='username.json'
+    try:
+        with open(filename) as f_obj:
+            username=json.load(f_obj)
+    except FileNotFoundError:
+        return None
+      else:
+        return username
+  
+  def get_new_username():
+    username=input(&quot;What is your name?&quot;)
+    filename='username.json'
+    with open(filename,'w') as f_obj:
+        json.dump(username,f_obj)
+    return username
+  
+  def greet_user():
+    username=get_stored_username()
+    if username:
+        print(&quot;Wellcome back,&quot;+username)
+    else:
+        username=get_new_username()
+        print(&quot;we'll remeber when you come back, &quot;+username)
+  
+  greet_user()
+</code></pre>
+
+<p><br/></p>
+
+<p><br/></p>
+
+<h2 id="测试代码">测试代码</h2>
+
+<h3 id="测试函数">测试函数</h3>
+
+<ul>
+<li>单元测试</li>
+</ul>
+
+<pre><code class="language-python">  import unittest
+  from module import function
+  
+  class NamesTestCase(unittest.TestCase):
+    def test_first_last_name(self):#必须以test开头
+    ...
+    self.assertEqual(function,'测试样例')
+  
+  unittest.main()
+</code></pre>
+
+<h3 id="测试类">测试类</h3>
+
+<ul>
+<li>断言方法</li>
+</ul>
+
+<pre><code class="language-python">  assertEqual(a,b)
+  assertNotEqual(a,b)
+  assertTrue(x)
+  assertFalse(x)
+  assertIn(item,list)
+  assertNotIn(item,list)
+</code></pre>
+
+<ul>
+<li>setUp()</li>
+</ul>
+
+<pre><code class="language-python">  def setUp(self):
+    self.name=...
+  #可以直接创建实例，不需要在测试方法里创建
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>:</span>
+                <span>Destinyu </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>:</span>
+                   <span>485</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>:</span>
+                <span>
+
+      
+      
+      
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fdestinyu.github.io%2f2020%2fpython%25E5%259F%25BA%25E7%25A1%2580%25E6%2580%25BB%25E7%25BB%2593%25E4%25BA%258C%2f&amp;title=python%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e6%80%bb%e7%bb%93%ef%bc%88%e4%ba%8c%ef%bc%89" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2fdestinyu.github.io%2f2020%2fpython%25E5%259F%25BA%25E7%25A1%2580%25E6%2580%25BB%25E7%25BB%2593%25E4%25BA%258C%2f&amp;title=python%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e6%80%bb%e7%bb%93%ef%bc%88%e4%ba%8c%ef%bc%89" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+        <a href="//service.weibo.com/share/share.php?url=https%3a%2f%2fdestinyu.github.io%2f2020%2fpython%25E5%259F%25BA%25E7%25A1%2580%25E6%2580%25BB%25E7%25BB%2593%25E4%25BA%258C%2f&amp;appkey=&amp;title=python%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e6%80%bb%e7%bb%93%ef%bc%88%e4%ba%8c%ef%bc%89" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-icon-tag"></i>: 
+            
+            <span class="tag"><a href="https://destinyu.github.io/tags/%E5%9F%BA%E7%A1%80/">
+                    #基础</a></span>
+            
+            <span class="tag"><a href="https://destinyu.github.io/tags/%E6%80%BB%E7%BB%93/">
+                    #总结</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();"></a></span> · 
+                <span><a href="https://destinyu.github.io"></a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://destinyu.github.io/2020/python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E4%B8%80/" class="prev" rel="prev" title="python基础知识总结(一)"><i class="iconfont icon-dajiantou"></i>&nbsp;python基础知识总结(一)</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'yourdiscussshortname';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a><div id="gitalk-container"></div>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+      <script type="text/javascript">
+          var gitalk = new Gitalk({
+              id: '2020-02-06 00:00:00 \x2b0000 UTC',
+              title: 'python基础知识总结（二）',
+              clientID: '',
+              clientSecret: '',
+              repo: 'destinyu\/destinyu.github.io',
+              owner: 'destinyu',
+              admin: ['destinyu'],
+              body: decodeURI(location.href)
+          });
+          gitalk.render('gitalk-container');
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+    <script src="https://utteranc.es/client.js"
+            repo="destinyu/destinyu/destinyu.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://destinyu.github.io">Destinyu</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>
