@@ -5,8 +5,134 @@
     <description>Recent content in ForFurture on ForFurture</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 06 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Feb 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://destinyu.github.io/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>几个运用python基础知识的小问题</title>
+      <link>https://destinyu.github.io/2020/%E5%87%A0%E4%B8%AA%E8%BF%90%E7%94%A8python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://destinyu.github.io/2020/%E5%87%A0%E4%B8%AA%E8%BF%90%E7%94%A8python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
+      <description>
+
+&lt;h2 id=&#34;斐波那契数列&#34;&gt;斐波那契数列&lt;/h2&gt;
+
+&lt;h3 id=&#34;思路&#34;&gt;思路&lt;/h3&gt;
+
+&lt;p&gt;前两个数都是1，第三个数开始每个数都是前两个数之和&lt;/p&gt;
+
+&lt;p&gt;ps：在leetcode中只需要编写方法&lt;/p&gt;
+
+&lt;h3 id=&#34;方法&#34;&gt;方法&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Solution():
+    
+    def fib(self,N):
+        if N==0:
+            return 0
+        elif N==1:
+            return 1
+        else:
+            return self.fib(N - 1) + self.fib(N - 2)
+
+num=input(&amp;quot;输入:&amp;quot;)
+out=Solution()
+print(out.fib(int(num)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;素数&#34;&gt;素数&lt;/h2&gt;
+
+&lt;h3 id=&#34;思路-1&#34;&gt;思路&lt;/h3&gt;
+
+&lt;p&gt;只能被1和自身整除的正整数&lt;/p&gt;
+
+&lt;h3 id=&#34;方法-1&#34;&gt;方法&lt;/h3&gt;
+
+&lt;p&gt;循环处理&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;num=[]
+i=2
+for i in range(2,100):
+    for j in range(2,i):
+        if (i%j==0):
+            break
+        else:
+        num.append(i)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;完美数&#34;&gt;完美数&lt;/h2&gt;
+
+&lt;h3 id=&#34;思路-2&#34;&gt;思路&lt;/h3&gt;
+
+&lt;p&gt;所有除自身以外的因子的和恰好等于它本身&lt;/p&gt;
+
+&lt;h3 id=&#34;方法-2&#34;&gt;方法&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;比较好想的方法：遍历所有数，凡是可以被除开的，都存入列表里面，然后将列表相加得到结果，与原数比较&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  class Solution_1():#重复判断一次
+      def checkPerfectNumber(self,x):
+  
+          a=[]
+          num=0
+          sum=0
+          for factor in range(int(x),1,-1):
+              if int(x)%factor==0:
+                  a.append(int(x)//factor)
+                  sum+=a[num]
+                  num += 1
+          if sum==int(x):
+               return True
+          else:
+              return False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;问题&lt;/strong&gt;：存在一次重复判断，并且用列表复杂度高，超时&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;标准解法：为了不超时，判断到&lt;strong&gt;开平方&lt;/strong&gt;即可。1和小于1的数都不是完美数。从2开始将因子都相加。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;  class Solution_2():
+      def checkPerfectNumber(self,num):
+          if num&amp;lt;=1:
+              return False
+          sum=1
+          for i in range(2,int(sqrt(num)+1)):
+              if num%i==0:
+                  sum+=i+num//i
+          if sum==num:
+              return True
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;​        &lt;br/&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;另解：看到一种方法，是想从2开始判断，用i&amp;lt;num/i来控制因子大小，不会重复判断两次。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;细看这个i&amp;lt;num/i应该就是sqrt(num)的来源&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;巧解：因为完美数一共就5个，可以直接输出&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>python基础知识总结(二)</title>

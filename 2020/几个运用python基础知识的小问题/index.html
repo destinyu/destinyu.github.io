@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://destinyu.github.io/2020/python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E4%BA%8C/" />
+  
+  <link rel="canonical" href="https://destinyu.github.io/2020/%E5%87%A0%E4%B8%AA%E8%BF%90%E7%94%A8python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           几个运用python基础知识的小问题 | ForFurture
+       
+  </title>
+  <meta name="title" content="几个运用python基础知识的小问题 | ForFurture">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="几个运用python基础知识的小问题"/>
+<meta name="twitter:description" content="斐波那契数列 思路 前两个数都是1，第三个数开始每个数都是前两个数之和
+ps：在leetcode中只需要编写方法
+方法 class Solution(): def fib(self,N): if N==0: return 0 elif N==1: return 1 else: return self.fib(N - 1) &#43; self.fib(N - 2) num=input(&quot;输入:&quot;) out=Solution() print(out.fib(int(num)))  
+
+素数 思路 只能被1和自身整除的正整数
+方法 循环处理
+num=[] i=2 for i in range(2,100): for j in range(2,i): if (i%j==0): break else: num.append(i)  
+
+完美数 思路 所有除自身以外的因子的和恰好等于它本身
+方法  比较好想的方法：遍历所有数，凡是可以被除开的，都存入列表里面，然后将列表相加得到结果，与原数比较  class Solution_1():#重复判断一次 def checkPerfectNumber(self,x): a=[] num=0 sum=0 for factor in range(int(x),1,-1): if int(x)%factor==0: a."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "几个运用python基础知识的小问题",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/destinyu.github.io\/2020\/%E5%87%A0%E4%B8%AA%E8%BF%90%E7%94%A8python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/destinyu.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  "keywords": "算法",
+  "wordcount":  105 ,
+  "url": "https:\/\/destinyu.github.io\/2020\/%E5%87%A0%E4%B8%AA%E8%BF%90%E7%94%A8python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98\/",
+  "datePublished": "2020-02-17T00:00:00\x2b00:00",
+  "dateModified": "2020-02-17T00:00:00\x2b00:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Destinyu",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/destinyu.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Destinyu"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://destinyu.github.io">ForFurture</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blogs</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tag</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://destinyu.github.io">ForFurture</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blogs</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tag</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">几个运用python基础知识的小问题</h1>
+        <div class="post-meta">
+              <a href="https://destinyu.github.io" rel="author">Destinyu</a>  ♥ 
+                <span class="post-time">
+                     <time datetime=2020-02-17 >17 February 2020</time>
+                </span>
+                
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://destinyu.github.io/categories/python/"> python </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h2 id="斐波那契数列">斐波那契数列</h2>
+
+<h3 id="思路">思路</h3>
+
+<p>前两个数都是1，第三个数开始每个数都是前两个数之和</p>
+
+<p>ps：在leetcode中只需要编写方法</p>
+
+<h3 id="方法">方法</h3>
+
+<pre><code class="language-python">class Solution():
+    
+    def fib(self,N):
+        if N==0:
+            return 0
+        elif N==1:
+            return 1
+        else:
+            return self.fib(N - 1) + self.fib(N - 2)
+
+num=input(&quot;输入:&quot;)
+out=Solution()
+print(out.fib(int(num)))
+</code></pre>
+
+<p><br/></p>
+
+<p><br/></p>
+
+<h2 id="素数">素数</h2>
+
+<h3 id="思路-1">思路</h3>
+
+<p>只能被1和自身整除的正整数</p>
+
+<h3 id="方法-1">方法</h3>
+
+<p>循环处理</p>
+
+<pre><code class="language-python">num=[]
+i=2
+for i in range(2,100):
+    for j in range(2,i):
+        if (i%j==0):
+            break
+        else:
+        num.append(i)
+</code></pre>
+
+<p><br/></p>
+
+<p><br/></p>
+
+<h2 id="完美数">完美数</h2>
+
+<h3 id="思路-2">思路</h3>
+
+<p>所有除自身以外的因子的和恰好等于它本身</p>
+
+<h3 id="方法-2">方法</h3>
+
+<ul>
+<li>比较好想的方法：遍历所有数，凡是可以被除开的，都存入列表里面，然后将列表相加得到结果，与原数比较</li>
+</ul>
+
+<pre><code class="language-python">  class Solution_1():#重复判断一次
+      def checkPerfectNumber(self,x):
+  
+          a=[]
+          num=0
+          sum=0
+          for factor in range(int(x),1,-1):
+              if int(x)%factor==0:
+                  a.append(int(x)//factor)
+                  sum+=a[num]
+                  num += 1
+          if sum==int(x):
+               return True
+          else:
+              return False
+</code></pre>
+
+<p><strong>问题</strong>：存在一次重复判断，并且用列表复杂度高，超时</p>
+
+<p><br/></p>
+
+<ul>
+<li>标准解法：为了不超时，判断到<strong>开平方</strong>即可。1和小于1的数都不是完美数。从2开始将因子都相加。</li>
+</ul>
+
+<pre><code class="language-python">  class Solution_2():
+      def checkPerfectNumber(self,num):
+          if num&lt;=1:
+              return False
+          sum=1
+          for i in range(2,int(sqrt(num)+1)):
+              if num%i==0:
+                  sum+=i+num//i
+          if sum==num:
+              return True
+</code></pre>
+
+<p>​        <br/></p>
+
+<ul>
+<li>另解：看到一种方法，是想从2开始判断，用i&lt;num/i来控制因子大小，不会重复判断两次。</li>
+</ul>
+
+<p>细看这个i&lt;num/i应该就是sqrt(num)的来源</p>
+
+<p><br/></p>
+
+<ul>
+<li>巧解：因为完美数一共就5个，可以直接输出</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>:</span>
+                <span>Destinyu </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>:</span>
+                   <span>105</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>:</span>
+                <span>
+
+      
+      
+      
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fdestinyu.github.io%2f2020%2f%25E5%2587%25A0%25E4%25B8%25AA%25E8%25BF%2590%25E7%2594%25A8python%25E5%259F%25BA%25E7%25A1%2580%25E7%259F%25A5%25E8%25AF%2586%25E7%259A%2584%25E5%25B0%258F%25E9%2597%25AE%25E9%25A2%2598%2f&amp;title=%e5%87%a0%e4%b8%aa%e8%bf%90%e7%94%a8python%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e7%9a%84%e5%b0%8f%e9%97%ae%e9%a2%98" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2fdestinyu.github.io%2f2020%2f%25E5%2587%25A0%25E4%25B8%25AA%25E8%25BF%2590%25E7%2594%25A8python%25E5%259F%25BA%25E7%25A1%2580%25E7%259F%25A5%25E8%25AF%2586%25E7%259A%2584%25E5%25B0%258F%25E9%2597%25AE%25E9%25A2%2598%2f&amp;title=%e5%87%a0%e4%b8%aa%e8%bf%90%e7%94%a8python%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e7%9a%84%e5%b0%8f%e9%97%ae%e9%a2%98" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+        <a href="//service.weibo.com/share/share.php?url=https%3a%2f%2fdestinyu.github.io%2f2020%2f%25E5%2587%25A0%25E4%25B8%25AA%25E8%25BF%2590%25E7%2594%25A8python%25E5%259F%25BA%25E7%25A1%2580%25E7%259F%25A5%25E8%25AF%2586%25E7%259A%2584%25E5%25B0%258F%25E9%2597%25AE%25E9%25A2%2598%2f&amp;appkey=&amp;title=%e5%87%a0%e4%b8%aa%e8%bf%90%e7%94%a8python%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e7%9a%84%e5%b0%8f%e9%97%ae%e9%a2%98" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-icon-tag"></i>: 
+            
+            <span class="tag"><a href="https://destinyu.github.io/tags/%E7%AE%97%E6%B3%95/">
+                    #算法</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();"></a></span> · 
+                <span><a href="https://destinyu.github.io"></a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://destinyu.github.io/2020/python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E4%BA%8C/" class="prev" rel="prev" title="python基础知识总结(二)"><i class="iconfont icon-dajiantou"></i>&nbsp;python基础知识总结(二)</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'yourdiscussshortname';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a><div id="gitalk-container"></div>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+      <script type="text/javascript">
+          var gitalk = new Gitalk({
+              id: '2020-02-17 00:00:00 \x2b0000 UTC',
+              title: '几个运用python基础知识的小问题',
+              clientID: '',
+              clientSecret: '',
+              repo: 'destinyu\/destinyu.github.io',
+              owner: 'destinyu',
+              admin: ['destinyu'],
+              body: decodeURI(location.href)
+          });
+          gitalk.render('gitalk-container');
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+    <script src="https://utteranc.es/client.js"
+            repo="destinyu/destinyu/destinyu.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://destinyu.github.io">Destinyu</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

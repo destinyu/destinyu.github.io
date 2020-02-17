@@ -6,10 +6,28 @@
     <description>Recent content in python on ForFurture</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 06 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://destinyu.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>几个运用python基础知识的小问题</title>
+      <link>https://destinyu.github.io/2020/%E5%87%A0%E4%B8%AA%E8%BF%90%E7%94%A8python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://destinyu.github.io/2020/%E5%87%A0%E4%B8%AA%E8%BF%90%E7%94%A8python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/</guid>
+      <description>斐波那契数列 思路 前两个数都是1，第三个数开始每个数都是前两个数之和
+ps：在leetcode中只需要编写方法
+方法 class Solution(): def fib(self,N): if N==0: return 0 elif N==1: return 1 else: return self.fib(N - 1) + self.fib(N - 2) num=input(&amp;quot;输入:&amp;quot;) out=Solution() print(out.fib(int(num)))  
+
+素数 思路 只能被1和自身整除的正整数
+方法 循环处理
+num=[] i=2 for i in range(2,100): for j in range(2,i): if (i%j==0): break else: num.append(i)  
+
+完美数 思路 所有除自身以外的因子的和恰好等于它本身
+方法  比较好想的方法：遍历所有数，凡是可以被除开的，都存入列表里面，然后将列表相加得到结果，与原数比较  class Solution_1():#重复判断一次 def checkPerfectNumber(self,x): a=[] num=0 sum=0 for factor in range(int(x),1,-1): if int(x)%factor==0: a.</description>
+    </item>
     
     <item>
       <title>python基础知识总结(二)</title>
