@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://destinyu.github.io/2020/%E5%87%A0%E4%B8%AA%E8%BF%90%E7%94%A8python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" />
+  
+  <link rel="canonical" href="https://destinyu.github.io/2020/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%BA%94%E7%94%A8/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           字符串的应用 | ForFurture
+       
+  </title>
+  <meta name="title" content="字符串的应用 | ForFurture">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="字符串的应用"/>
+<meta name="twitter:description" content="字符串的应用 跑马灯 import os import time def main(): content = &#39;北京欢迎你为你开天辟地…………&#39; while True: # 清理屏幕上的输出 os.system(&#39;cls&#39;) # os.system(&#39;clear&#39;) print(content) # 休眠200毫秒 time.sleep(0.2) content = content[1:] &#43; content[0] if __name__ == &#39;__main__&#39;: main()  
+返回给定文件名的后缀名 def get_suffix(filename, has_dot=False): &quot;&quot;&quot; 获取文件名的后缀名 :param filename: 文件名 :param has_dot: 返回的后缀名是否需要带点 :return: 文件的后缀名 &quot;&quot;&quot; pos = filename.rfind(&#39;.&#39;) if 0 &lt; pos &lt; len(filename) - 1: index = pos if has_dot else pos &#43; 1 return filename[index:] else: return &#39;&#39;"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "字符串的应用",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/destinyu.github.io\/2020\/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%BA%94%E7%94%A8\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/destinyu.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  
+  "wordcount":  156 ,
+  "url": "https:\/\/destinyu.github.io\/2020\/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%BA%94%E7%94%A8\/",
+  "datePublished": "2020-02-26T00:00:00\x2b00:00",
+  "dateModified": "2020-02-26T00:00:00\x2b00:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Destinyu",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/destinyu.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Destinyu"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://destinyu.github.io">ForFurture</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blogs</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tag</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://destinyu.github.io">ForFurture</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blogs</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tag</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">字符串的应用</h1>
+        <div class="post-meta">
+              <a href="https://destinyu.github.io" rel="author">Destinyu</a>  ♥ 
+                <span class="post-time">
+                     <time datetime=2020-02-26 >26 February 2020</time>
+                </span>
+                
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://destinyu.github.io/categories/python/"> python </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h2 id="字符串的应用">字符串的应用</h2>
+
+<h3 id="跑马灯">跑马灯</h3>
+
+<pre><code class="language-python">import os
+import time
+
+
+def main():
+    content = '北京欢迎你为你开天辟地…………'
+    while True:
+        # 清理屏幕上的输出
+        os.system('cls')  # os.system('clear')
+        print(content)
+        # 休眠200毫秒
+        time.sleep(0.2)
+        content = content[1:] + content[0]
+
+
+if __name__ == '__main__':
+    main()
+</code></pre>
+
+<p><br/></p>
+
+<h3 id="返回给定文件名的后缀名">返回给定文件名的后缀名</h3>
+
+<pre><code class="language-python">def get_suffix(filename, has_dot=False):
+    &quot;&quot;&quot;
+    获取文件名的后缀名
+
+    :param filename: 文件名
+    :param has_dot: 返回的后缀名是否需要带点
+    :return: 文件的后缀名
+    &quot;&quot;&quot;
+    pos = filename.rfind('.')
+    if 0 &lt; pos &lt; len(filename) - 1:
+        index = pos if has_dot else pos + 1
+        return filename[index:]
+    else:
+        return ''
+</code></pre>
+
+<p><br/></p>
+
+<h3 id="获取文件名的后缀名">获取文件名的后缀名</h3>
+
+<pre><code class="language-python">def get_suffix(filename, has_dot=False):#love.txt
+   &quot;&quot;&quot;
+   获取文件名的后缀名
+
+   :param filename: 文件名
+   :param has_dot: 返回的后缀名是否需要带点
+   :return: 文件的后缀名
+   &quot;&quot;&quot;
+   pos = filename.rfind('.')#4
+   if 0 &lt; pos &lt; len(filename) - 1:#0&lt;pos&lt;7
+      index = pos if has_dot else pos + 1#5
+      return filename[index:]#txt
+   else:
+      return ''
+
+name=get_suffix('love.txt',True)
+print(name)
+</code></pre>
+
+<p><br/></p>
+
+<h3 id="返回字符串中的最大值和第二大值">返回字符串中的最大值和第二大值</h3>
+
+<pre><code class="language-python">def max2(x):#acdbef
+   m1, m2 = (x[0], x[1]) if x[0] &gt; x[1] else (x[1], x[0])
+   for index in range(2, len(x)):
+      if x[index] &gt; m1:
+         m2 = m1
+         m1 = x[index]
+      elif x[index] &gt; m2:
+         m2 = x[index]
+   return m1, m2
+
+string=max2('acdbef')
+print(string)
+</code></pre>
+
+<p><br/></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>:</span>
+                <span>Destinyu </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>:</span>
+                   <span>156</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>:</span>
+                <span>
+
+      
+      
+      
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fdestinyu.github.io%2f2020%2f%25E5%25AD%2597%25E7%25AC%25A6%25E4%25B8%25B2%25E7%259A%2584%25E5%25BA%2594%25E7%2594%25A8%2f&amp;title=%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9a%84%e5%ba%94%e7%94%a8" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+        <a href="//www.douban.com/recommend/?url=https%3a%2f%2fdestinyu.github.io%2f2020%2f%25E5%25AD%2597%25E7%25AC%25A6%25E4%25B8%25B2%25E7%259A%2584%25E5%25BA%2594%25E7%2594%25A8%2f&amp;title=%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9a%84%e5%ba%94%e7%94%a8" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-douban"></i>
+          </a>
+          
+
+          
+        <a href="//service.weibo.com/share/share.php?url=https%3a%2f%2fdestinyu.github.io%2f2020%2f%25E5%25AD%2597%25E7%25AC%25A6%25E4%25B8%25B2%25E7%259A%2584%25E5%25BA%2594%25E7%2594%25A8%2f&amp;appkey=&amp;title=%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9a%84%e5%ba%94%e7%94%a8" target="_blank" title="Share on Douban ">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();"></a></span> · 
+                <span><a href="https://destinyu.github.io"></a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://destinyu.github.io/2020/%E5%87%A0%E4%B8%AA%E8%BF%90%E7%94%A8python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="prev" rel="prev" title="几个运用python基础知识的小问题"><i class="iconfont icon-dajiantou"></i>&nbsp;几个运用python基础知识的小问题</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'yourdiscussshortname';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a><div id="gitalk-container"></div>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+      <script type="text/javascript">
+          var gitalk = new Gitalk({
+              id: '2020-02-26 00:00:00 \x2b0000 UTC',
+              title: '字符串的应用',
+              clientID: '',
+              clientSecret: '',
+              repo: 'destinyu\/destinyu.github.io',
+              owner: 'destinyu',
+              admin: ['destinyu'],
+              body: decodeURI(location.href)
+          });
+          gitalk.render('gitalk-container');
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+    <script src="https://utteranc.es/client.js"
+            repo="destinyu/destinyu/destinyu.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://destinyu.github.io">Destinyu</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

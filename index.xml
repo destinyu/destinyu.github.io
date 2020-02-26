@@ -5,8 +5,104 @@
     <description>Recent content in ForFurture on ForFurture</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 17 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://destinyu.github.io/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>字符串的应用</title>
+      <link>https://destinyu.github.io/2020/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://destinyu.github.io/2020/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+      <description>
+
+&lt;h2 id=&#34;字符串的应用&#34;&gt;字符串的应用&lt;/h2&gt;
+
+&lt;h3 id=&#34;跑马灯&#34;&gt;跑马灯&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+import time
+
+
+def main():
+    content = &#39;北京欢迎你为你开天辟地…………&#39;
+    while True:
+        # 清理屏幕上的输出
+        os.system(&#39;cls&#39;)  # os.system(&#39;clear&#39;)
+        print(content)
+        # 休眠200毫秒
+        time.sleep(0.2)
+        content = content[1:] + content[0]
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;返回给定文件名的后缀名&#34;&gt;返回给定文件名的后缀名&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def get_suffix(filename, has_dot=False):
+    &amp;quot;&amp;quot;&amp;quot;
+    获取文件名的后缀名
+
+    :param filename: 文件名
+    :param has_dot: 返回的后缀名是否需要带点
+    :return: 文件的后缀名
+    &amp;quot;&amp;quot;&amp;quot;
+    pos = filename.rfind(&#39;.&#39;)
+    if 0 &amp;lt; pos &amp;lt; len(filename) - 1:
+        index = pos if has_dot else pos + 1
+        return filename[index:]
+    else:
+        return &#39;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;获取文件名的后缀名&#34;&gt;获取文件名的后缀名&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def get_suffix(filename, has_dot=False):#love.txt
+   &amp;quot;&amp;quot;&amp;quot;
+   获取文件名的后缀名
+
+   :param filename: 文件名
+   :param has_dot: 返回的后缀名是否需要带点
+   :return: 文件的后缀名
+   &amp;quot;&amp;quot;&amp;quot;
+   pos = filename.rfind(&#39;.&#39;)#4
+   if 0 &amp;lt; pos &amp;lt; len(filename) - 1:#0&amp;lt;pos&amp;lt;7
+      index = pos if has_dot else pos + 1#5
+      return filename[index:]#txt
+   else:
+      return &#39;&#39;
+
+name=get_suffix(&#39;love.txt&#39;,True)
+print(name)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;返回字符串中的最大值和第二大值&#34;&gt;返回字符串中的最大值和第二大值&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def max2(x):#acdbef
+   m1, m2 = (x[0], x[1]) if x[0] &amp;gt; x[1] else (x[1], x[0])
+   for index in range(2, len(x)):
+      if x[index] &amp;gt; m1:
+         m2 = m1
+         m1 = x[index]
+      elif x[index] &amp;gt; m2:
+         m2 = x[index]
+   return m1, m2
+
+string=max2(&#39;acdbef&#39;)
+print(string)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>几个运用python基础知识的小问题</title>
@@ -131,6 +227,59 @@ for i in range(2,100):
 &lt;ul&gt;
 &lt;li&gt;巧解：因为完美数一共就5个，可以直接输出&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;最大公约数和最小公倍数&#34;&gt;最大公约数和最小公倍数&lt;/h2&gt;
+
+&lt;h3 id=&#34;思路-3&#34;&gt;思路&lt;/h3&gt;
+
+&lt;p&gt;最大公约数：&lt;/p&gt;
+
+&lt;p&gt;两个数按大小排好，找因子，从大的开始，若找到能将两数都整除的因子就是最大公约数&lt;/p&gt;
+
+&lt;p&gt;最小公倍数：&lt;/p&gt;
+
+&lt;p&gt;两数乘积/最大公约数&lt;/p&gt;
+
+&lt;h3 id=&#34;方法-3&#34;&gt;方法&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def gcd(x, y):
+    &amp;quot;&amp;quot;&amp;quot;求最大公约数&amp;quot;&amp;quot;&amp;quot;
+    (x, y) = (y, x) if x &amp;gt; y else (x, y)
+    for factor in range(x, 0, -1):
+        if x % factor == 0 and y % factor == 0:
+            return factor
+
+
+def lcm(x, y):
+    &amp;quot;&amp;quot;&amp;quot;求最小公倍数&amp;quot;&amp;quot;&amp;quot;
+    return x * y // gcd(x, y)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;回文数&#34;&gt;回文数&lt;/h2&gt;
+
+&lt;h3 id=&#34;思路-4&#34;&gt;思路&lt;/h3&gt;
+
+&lt;p&gt;将数字逐位拆解，倒着生成一次，与原数比较&lt;/p&gt;
+
+&lt;h3 id=&#34;方法-4&#34;&gt;方法&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def is_palindrome(num):
+    &amp;quot;&amp;quot;&amp;quot;判断一个数是不是回文数&amp;quot;&amp;quot;&amp;quot;
+    temp = num
+    total = 0
+    while temp &amp;gt; 0:
+        total = total * 10 + temp % 10
+        temp //= 10
+    return total == num
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

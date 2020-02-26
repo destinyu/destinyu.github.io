@@ -11,7 +11,7 @@
   
   
   <link rel="prev" href="https://destinyu.github.io/2020/python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E4%BA%8C/" />
-  
+  <link rel="next" href="https://destinyu.github.io/2020/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%BA%94%E7%94%A8/" />
   <link rel="canonical" href="https://destinyu.github.io/2020/%E5%87%A0%E4%B8%AA%E8%BF%90%E7%94%A8python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" />
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -64,7 +64,7 @@ num=[] i=2 for i in range(2,100): for j in range(2,i): if (i%j==0): break else: 
   },
   "genre": "posts",
   "keywords": "算法",
-  "wordcount":  105 ,
+  "wordcount":  192 ,
   "url": "https:\/\/destinyu.github.io\/2020\/%E5%87%A0%E4%B8%AA%E8%BF%90%E7%94%A8python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98\/",
   "datePublished": "2020-02-17T00:00:00\x2b00:00",
   "dateModified": "2020-02-17T00:00:00\x2b00:00",
@@ -289,6 +289,59 @@ for i in range(2,100):
 <li>巧解：因为完美数一共就5个，可以直接输出</li>
 </ul>
 
+<p><br/></p>
+
+<p><br/></p>
+
+<h2 id="最大公约数和最小公倍数">最大公约数和最小公倍数</h2>
+
+<h3 id="思路-3">思路</h3>
+
+<p>最大公约数：</p>
+
+<p>两个数按大小排好，找因子，从大的开始，若找到能将两数都整除的因子就是最大公约数</p>
+
+<p>最小公倍数：</p>
+
+<p>两数乘积/最大公约数</p>
+
+<h3 id="方法-3">方法</h3>
+
+<pre><code class="language-python">def gcd(x, y):
+    &quot;&quot;&quot;求最大公约数&quot;&quot;&quot;
+    (x, y) = (y, x) if x &gt; y else (x, y)
+    for factor in range(x, 0, -1):
+        if x % factor == 0 and y % factor == 0:
+            return factor
+
+
+def lcm(x, y):
+    &quot;&quot;&quot;求最小公倍数&quot;&quot;&quot;
+    return x * y // gcd(x, y)
+</code></pre>
+
+<p><br/></p>
+
+<p><br/></p>
+
+<h2 id="回文数">回文数</h2>
+
+<h3 id="思路-4">思路</h3>
+
+<p>将数字逐位拆解，倒着生成一次，与原数比较</p>
+
+<h3 id="方法-4">方法</h3>
+
+<pre><code class="language-python">def is_palindrome(num):
+    &quot;&quot;&quot;判断一个数是不是回文数&quot;&quot;&quot;
+    temp = num
+    total = 0
+    while temp &gt; 0:
+        total = total * 10 + temp % 10
+        temp //= 10
+    return total == num
+</code></pre>
+
     </div>
 
     <div class="post-copyright">
@@ -301,7 +354,7 @@ for i in range(2,100):
            
             <p class="copyright-item">
                     <span>:</span>
-                   <span>105</span>
+                   <span>192</span>
             </p>
             
             <p class="copyright-item">
@@ -374,6 +427,8 @@ for i in range(2,100):
         
         <a href="https://destinyu.github.io/2020/python%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E4%BA%8C/" class="prev" rel="prev" title="python基础知识总结(二)"><i class="iconfont icon-dajiantou"></i>&nbsp;python基础知识总结(二)</a>
          
+        
+        <a href="https://destinyu.github.io/2020/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%BA%94%E7%94%A8/" class="next" rel="next" title="字符串的应用">字符串的应用&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
         
     </div>
 
