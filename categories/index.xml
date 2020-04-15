@@ -6,10 +6,19 @@
     <description>Recent content in Categories on ForFurture</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://destinyu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>毕设</title>
+      <link>https://destinyu.github.io/categories/%E6%AF%95%E8%AE%BE/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://destinyu.github.io/categories/%E6%AF%95%E8%AE%BE/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>python</title>

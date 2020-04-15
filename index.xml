@@ -5,8 +5,105 @@
     <description>Recent content in ForFurture on ForFurture</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://destinyu.github.io/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>基于互联网新闻文本挖掘的投资与监管辅助决策</title>
+      <link>https://destinyu.github.io/2020/%E5%9F%BA%E4%BA%8E%E4%BA%92%E8%81%94%E7%BD%91%E6%96%B0%E9%97%BB%E6%96%87%E6%9C%AC%E6%8C%96%E6%8E%98%E7%9A%84%E6%8A%95%E8%B5%84%E4%B8%8E%E7%9B%91%E7%AE%A1%E8%BE%85%E5%8A%A9%E5%86%B3%E7%AD%96/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://destinyu.github.io/2020/%E5%9F%BA%E4%BA%8E%E4%BA%92%E8%81%94%E7%BD%91%E6%96%B0%E9%97%BB%E6%96%87%E6%9C%AC%E6%8C%96%E6%8E%98%E7%9A%84%E6%8A%95%E8%B5%84%E4%B8%8E%E7%9B%91%E7%AE%A1%E8%BE%85%E5%8A%A9%E5%86%B3%E7%AD%96/</guid>
+      <description>
+
+&lt;h2 id=&#34;基于互联网新闻文本挖掘的投资与监管辅助决策&#34;&gt;基于互联网新闻文本挖掘的投资与监管辅助决策&lt;/h2&gt;
+
+&lt;h3 id=&#34;目标&#34;&gt;目标&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;新闻文本量化，建立股票收益预测模型&lt;/li&gt;
+&lt;li&gt;训练文本自动分类模型&lt;/li&gt;
+&lt;li&gt;新闻文本情感分析，计算互联网形象指数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;方法&#34;&gt;方法&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;互联网新闻抓爬器&lt;/li&gt;
+&lt;li&gt;文本自动分类&lt;/li&gt;
+&lt;li&gt;文本情感分析&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;摘录&#34;&gt;摘录&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;文本挖掘&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;文本挖掘是指从非结构化的文本数据中提取有价值
+  的知识和模式，是对非结构化的文本数据进行数据挖掘。从某种意义上讲，文本挖掘是数据挖掘的一个分支。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;文本摘要&lt;/li&gt;
+&lt;li&gt;自动文本分类&lt;/li&gt;
+&lt;li&gt;文本聚类&lt;/li&gt;
+&lt;li&gt;关联规则&lt;/li&gt;
+&lt;li&gt;趋势预测&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;文本分析（情感词分析）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;文本分析是指对非结构化的文本进行向量表示以及
+  选择最能表示文本信息的特征属性过程。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;爬虫&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;广度优先搜索策略优先&lt;/p&gt;
+
+&lt;p&gt;基于抓爬网页的线性密度解析网页文本&lt;/p&gt;
+
+&lt;h4 id=&#34;文本挖掘过程&#34;&gt;文本挖掘过程&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;文本收集&lt;/li&gt;
+&lt;li&gt;文本特征建立&lt;/li&gt;
+&lt;li&gt;特征集降维&lt;/li&gt;
+&lt;li&gt;学习与知识模式的提取&lt;/li&gt;
+&lt;li&gt;模型质量评价&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;文本分类方法&#34;&gt;文本分类方法&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;决策树&lt;/li&gt;
+&lt;li&gt;神经网络&lt;/li&gt;
+&lt;li&gt;支持向量机&lt;/li&gt;
+&lt;li&gt;朴素贝叶斯&lt;/li&gt;
+&lt;li&gt;KNN分类&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;文本分类过程&#34;&gt;文本分类过程&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;文本分词&lt;/li&gt;
+&lt;li&gt;文本预处理&lt;/li&gt;
+&lt;li&gt;特征选择&lt;/li&gt;
+&lt;li&gt;文本表示&lt;/li&gt;
+&lt;li&gt;分类模型训练&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;文本情感分析&#34;&gt;文本情感分析&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;建立情感词权值字典+否定词词典&lt;/li&gt;
+&lt;li&gt;分词分句&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>字符串的应用</title>
